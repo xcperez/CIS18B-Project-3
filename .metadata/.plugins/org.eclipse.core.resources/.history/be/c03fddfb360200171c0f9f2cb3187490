@@ -1,0 +1,65 @@
+
+public class Sizes extends ExtraCharges{
+
+	Pizza pizza;
+	
+	public Sizes(Pizza pizza){
+		
+		this.pizza = pizza;
+		
+	}
+	public int getSize(){
+		
+		return pizza.getSize();
+		
+	}
+	@Override
+	public String getDescription() {
+		
+		String description = "";
+		if(getSize() == pizza.SMALL){
+			
+			description = ", Small";
+					
+		}else if (getSize() == pizza.MEDIUM){
+			
+			description = ", Medium";
+			
+		}else if(getSize() == pizza.LARGE){
+			
+			description = ", Large";
+			
+		}else if(getSize() == pizza.XLARGE){
+			
+			description = ", Extra Large";
+		}
+		return pizza.getDescription()+ description;
+		
+	}
+
+	@Override
+	public double cost() {
+		// TODO Auto-generated method stub
+		double cost = pizza.cost();
+		
+		if(getSize() == pizza.SMALL){
+			
+			cost += 10;
+					
+		}else if (getSize() == pizza.MEDIUM){
+			
+			cost += 14;
+			
+		}else if(getSize() == pizza.LARGE){
+			
+			cost += 18;
+		}else if(getSize() == pizza.XLARGE){
+			
+			cost += 22;
+		}
+		return cost;
+	}
+	
+	
+
+}

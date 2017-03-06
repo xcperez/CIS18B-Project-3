@@ -1,0 +1,30 @@
+
+public class CarryoutOrDelivery extends ExtraCharges{
+
+	Pizza pizza;
+	public CarryoutOrDelivery(){
+		
+		
+	}
+	@Override
+	public double cost() {
+		
+		if(pizza.getCarryout() == false){
+			
+			return 5;
+			
+		}
+		return 0;
+	}
+	@Override
+	public String getDescription() {
+		
+		if(pizza.getCarryout()){
+			
+			return "Carryout";
+			
+		}
+		return "Delivery";
+	}
+
+}

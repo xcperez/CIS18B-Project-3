@@ -1,0 +1,45 @@
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Scanner;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+public class Main {
+	
+	JFrame frame;
+	
+	public static void main(String[]args){
+		
+		Main main = new Main();
+		main.go();
+		Pizza p1 = new Delivery(p1);
+	}
+	public void go(){
+		
+		frame = new JFrame();
+		FlowLayout foo = new FlowLayout();
+		frame.setLayout(foo);
+		JButton button1 = new JButton("Delivery");
+		JButton button2 = new JButton("Carryout");
+		
+		frame.add(button1);
+		frame.add(button2);
+		frame.setSize(500, 500);
+		frame.setVisible(true);
+		button1.addActionListener(new Deliver());
+	}
+	class Deliver implements ActionListener{
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			Pizza pizza;
+			pizza = new Delivery(pizza);
+			
+		}
+	}
+
+	
+
+}

@@ -1,0 +1,15 @@
+
+public class Main {
+	
+	public static void main(String[]args){
+		
+		Pizza p1 = new Delivery();
+		
+		p1.size = 3;
+		
+		p1 = new Sizes(p1);
+		System.out.println(p1.description + " " + p1.cost());
+		
+	}
+
+}

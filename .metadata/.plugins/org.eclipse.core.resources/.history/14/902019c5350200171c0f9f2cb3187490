@@ -1,0 +1,20 @@
+
+public abstract class Pizza {
+	
+	String description = "Unknown";
+	boolean carryout = false;
+	
+	public String getDescription(){
+		
+		return description;
+		
+	}
+	public boolean getCarryout(){
+		
+		return carryout;
+		
+	}
+	
+	public abstract double cost();
+
+}
