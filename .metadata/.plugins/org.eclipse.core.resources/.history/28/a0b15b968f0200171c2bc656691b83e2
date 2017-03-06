@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[]args){
+		
+		Pizza pizza;
+		Scanner scan = new Scanner(System.in);
+		String choice;
+		int toppings;
+		
+		
+		System.out.println("Welcome to Pizza Place");
+		System.out.println("Will this order be a carryout or delivery?");
+		choice = scan.next();
+		
+		while(!choice.equalsIgnoreCase("carryout") && !choice.equalsIgnoreCase("delivery")){
+			
+			System.out.println("That was not a valid input. Please enter Carryout or Delivery.");
+			
+			choice = scan.next();
+			choice.toUpperCase();
+		
+		}
+		
+		if(choice.equalsIgnoreCase("carryout") ){
+			
+			pizza = new Carryout();
+			
+		}else {
+			
+			pizza = new Delivery();
+			
+		}
+		
+		System.out.println("What kind of toppings would you like to add?");
+		
+		System.out.println(pizza.getDescription() + ", $" + pizza.cost());
+		
+		scan.close();
+	}
+
+	
+
+}

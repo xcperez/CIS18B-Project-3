@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[]args){
+		
+		Pizza pizza = null;
+		Scanner scan = new Scanner(System.in);
+		String choice;
+		System.out.println("Welcome to Pizza Place");
+		System.out.println("Will this order be a carryout or delivery?");
+		choice = scan.next();
+		choice = choice.toUpperCase();
+		
+		if(choice != "CARRYOUT" && choice != "DELIVERY"){
+			
+			System.out.println("That was not a valid input. Please enter Carryout or Delivery.");
+			
+			choice = scan.next();
+			choice.toUpperCase();
+			
+		
+		}
+		
+		if(choice == "CARRYOUT"){
+			
+			pizza = new Delivery();
+			
+		}else {
+			
+			pizza = new Carryout();
+			
+		}
+		pizza.size = 4;
+		pizza = new Sizes(pizza);
+		
+		pizza.crust = 1;
+		pizza = new Crust(pizza);
+		pizza = new Pineapple(pizza);
+		
+		
+		System.out.println(pizza.getDescription() + ", $" + pizza.cost());
+		//System.out.println();
+	}
+
+	
+
+}

@@ -9,8 +9,10 @@ public abstract class Pizza {
 	final int THIN = 1;
 	final int THICK = 2;
 	final int STUFFED = 3;
+	
 	int crust = 0;
 	int size = 0;
+	int toppings = 0;
 	
 	public String getDescription(){
 		
@@ -28,6 +30,8 @@ public abstract class Pizza {
 	public int getCrust(){
 		
 		return crust;
+		
 	}
+
 
 }

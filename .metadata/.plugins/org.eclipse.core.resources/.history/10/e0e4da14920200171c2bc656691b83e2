@@ -1,0 +1,105 @@
+import java.util.Scanner;
+public class Main {
+	
+	//Pizza pizza;
+	static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[]args){
+		
+		Pizza pizza;
+		int extraCharges;
+		
+		
+		System.out.println("Welcome to Pizza Place");
+		
+		pizza = CarryoutOrDelivery();
+		System.out.println("What kind of crust would you like?\n"
+							+ "1) Thin\n"
+							+ "2) Thick\n"
+							+ "3) Stuffed\n");
+		
+		
+		extraCharges = scan.nextInt();
+		while(extraCharges != 1 && extraCharges != 2 && extraCharges != 3){
+			
+			System.out.println("That was not a valid input. Please "
+					+ "enter 1, 2, or 3.");
+			extraCharges = scan.nextInt();
+			
+		}
+		switch (extraCharges) {
+		
+			case 1:
+				pizza.crust = 1;
+				pizza = new Crust(pizza);
+			
+			case 2:
+				pizza.crust = 2;
+				pizza = new Crust(pizza);
+				
+			case 3:
+				pizza.crust = 3;
+				pizza = new Crust(pizza);		
+			
+		}
+		System.out.println("What kind of toppings would you like to add?"
+							+ "1) Cheese"
+							+ "2) Pepperoni"
+							+ "3) Mushrooms"
+							+ "4) Pineapples"
+							+ "5) Sausage"
+							+ "0) Exit");
+		
+		extraCharges = scan.nextInt();
+		
+		while(extraCharges != 0){
+			
+			while(extraCharges != 1 && extraCharges != 2 && extraCharges != 3 &&
+					extraCharges != 4 && extraCharges != 5){
+				
+				System.out.println("That was not a topping option. Please enter 1-6");
+				extraCharges = scan.nextInt();
+				
+			}
+			switch (extraCharges){
+			
+				case 1:
+					//pizza = new Cheese(pizza);
+			}
+		}
+		
+		System.out.println(pizza.getDescription() + ", $" + pizza.cost());
+		
+		scan.close();
+	}
+
+	public static Pizza CarryoutOrDelivery(){
+		
+		Pizza pizza;
+		String choice;
+		System.out.println("Will this order be a carryout or delivery?");
+		choice = scan.next();
+		
+		while(!choice.equalsIgnoreCase("carryout") && !choice.equalsIgnoreCase("delivery")){
+			
+			System.out.println("That was not a valid input. Please enter Carryout or Delivery.");
+			
+			choice = scan.next();
+			choice.toUpperCase();
+		
+		}
+		
+		if(choice.equalsIgnoreCase("carryout") ){
+			
+			pizza = new Carryout();
+			
+		}else {
+			
+			pizza = new Delivery();
+			
+		}
+		return pizza;
+		
+	}
+
+}
