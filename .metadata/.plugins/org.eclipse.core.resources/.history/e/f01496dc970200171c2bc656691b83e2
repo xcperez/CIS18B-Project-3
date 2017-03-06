@@ -1,4 +1,3 @@
-import java.text.DecimalFormat;
 import java.util.Scanner;
 public class Main {
 	
@@ -7,7 +6,6 @@ public class Main {
 	
 	public static void main(String[]args){
 		
-		DecimalFormat df = new DecimalFormat("#.00");
 		Pizza pizza;
 		
 		System.out.println("Welcome to Pizza Place");
@@ -16,7 +14,7 @@ public class Main {
 		pizza = crust(pizza);
 		pizza = addToppings(pizza);
 		
-		System.out.println(pizza.getDescription() + ": \n$" + df.format(pizza.cost()));
+		System.out.println(pizza.getDescription() + ": \n$" + pizza.cost());
 		
 		System.out.println("Thank you and come again!");
 		scan.close();
